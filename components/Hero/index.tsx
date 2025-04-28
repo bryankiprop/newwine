@@ -1,4 +1,5 @@
 import React from "react";
+import AddQuoteDialog from "../AddQuoteDialog";
 const quotes = [
   "A habit needs to be established before it can be expanded upon.",
   "Progress is more important than perfection.",
@@ -28,12 +29,12 @@ const categories = [
 export default function Hero() {
   return (
     <div className="flex">
-      <div className="hidden lg:flex w-[20%] h-[100vh] pt-[80px] overflow-y-auto">
+      <div className="hidden lg:flex w-[20%] h-[100vh] bg-gray-100 pt-[80px] overflow-y-auto">
         <div className=" px-3">
-          {categories.map((cat, i) => (
+          {categories.map((category, i) => (
             <div className=" py-3 pl-3 my-1" key={i}>
               <span className=" cursor-pointer text-[20px] text-gray-600">
-                {cat}
+                {category}
               </span>
             </div>
           ))}
@@ -48,6 +49,7 @@ export default function Hero() {
             {quote}
           </div>
         ))}
+        <AddQuoteDialog />
       </div>
     </div>
   );
